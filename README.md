@@ -1,3 +1,3 @@
-# `template`
+# Scrimba
 
-Template for generic repositories
+https://scrimba.com/
