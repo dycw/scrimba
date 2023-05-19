@@ -1,113 +1,26 @@
-const characters = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-  "0",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "~",
-  "`",
-  "!",
-  "@",
-  "#",
-  "$",
-  "%",
-  "^",
-  "&",
-  "*",
-  "(",
-  ")",
-  "_",
-  "-",
-  "+",
-  "=",
-  "{",
-  "[",
-  "}",
-  "]",
-  ",",
-  "|",
-  ":",
-  ";",
-  "<",
-  ">",
-  ".",
-  "?",
-  "/",
-];
+const meter_to_feet = 3.281;
+const liter_to_gallon = 0.264;
+const kilogram_to_pound = 2.204;
 
-const getRndInteger = (min, max) => {
-  return Math.floor(Math.random() * (max - min)) + min;
+const inputField = document.getElementById("input-field");
+
+const updateField = (kind, curr, baseUnit, factor, otherUnit) => {
+  document.getElementById(kind).querySelector(".result-value").textContent = `
+    ${curr} ${baseUnit} = ${(curr * factor).toFixed(3)} ${otherUnit}
+    |
+    ${curr} ${otherUnit} = ${(curr / factor).toFixed(3)} ${baseUnit}`;
 };
 
-const getRndCharacter = () => {
-  return characters[getRndInteger(0, characters.length - 1)];
+const render = () => {
+  const curr = inputField.value;
+  updateField("length", curr, "meters", meter_to_feet, "feet");
+  updateField("volume", curr, "liters", liter_to_gallon, "gallons");
+  updateField("mass", curr, "kilos", kilogram_to_pound, "pounds");
 };
 
-const getRndPassword = () => {
-  const length = getRndInteger(10, 20);
-  const chars = new Array(length).fill(null).map(getRndCharacter);
-  return chars.join("");
-};
+inputField.addEventListener("keyup", render);
+document.getElementById("convert-btn").addEventListener("click", render);
 
-const generate = () => {
-  const [pass1, pass2] = new Array(2).fill(null).map(getRndPassword);
-  document.getElementById("output1").textContent = pass1;
-  document.getElementById("output2").textContent = pass2;
-};
+if (inputField.value !== null) {
+  render();
+}
