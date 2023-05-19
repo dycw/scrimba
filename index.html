@@ -9,14 +9,25 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div id="main-container">
-      <h1>Generate a <span class="green">random password</span></h1>
-      <h2>Never use an insecure password again.</h2>
-      <button onclick="generate()">Generate passwords</button>
-      <div id="horizontal"></div>
-      <div id="output-container">
-        <p class="output" id="output1"></p>
-        <p class="output" id="output2"></p>
+    <div id="main">
+      <div id="input-container">
+        <h1 class="input-element">Metric/Imperial Unit Conversion</h1>
+        <input class="input-element" type="text" value="20" id="input-field" />
+        <button class="input-element" id="convert-btn">Convert</button>
+      </div>
+      <div id="result-container">
+        <div class="result" id="length">
+          <div class="result-desc">Length (Meter/Feet)</div>
+          <div class="result-value">dummy</div>
+        </div>
+        <div class="result" id="volume">
+          <div class="result-desc">Volume (Litres/Gallons)</div>
+          <div class="result-value">dummy</div>
+        </div>
+        <div class="result" id="mass">
+          <div class="result-desc">Mass (Kilograms/Pounds)</div>
+          <div class="result-value">dummy</div>
+        </div>
       </div>
     </div>
     <script src="index.js"></script>
