@@ -1,26 +1,34 @@
-const meter_to_feet = 3.281;
-const liter_to_gallon = 0.264;
-const kilogram_to_pound = 2.204;
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+import {
+  ref,
+  push,
+  onValue,
+  getDatabase,
+} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
 
-const inputField = document.getElementById("input-field");
-
-const updateField = (kind, curr, baseUnit, factor, otherUnit) => {
-  document.getElementById(kind).querySelector(".result-value").textContent = `
-    ${curr} ${baseUnit} = ${(curr * factor).toFixed(3)} ${otherUnit}
-    |
-    ${curr} ${otherUnit} = ${(curr / factor).toFixed(3)} ${baseUnit}`;
+const firebaseConfig = {
+  databaseURL:
+    "https://playground-6bec4-default-rtdb.asia-southeast1.firebasedatabase.app/",
 };
 
-const render = () => {
-  const curr = inputField.value;
-  updateField("length", curr, "meters", meter_to_feet, "feet");
-  updateField("volume", curr, "liters", liter_to_gallon, "gallons");
-  updateField("mass", curr, "kilos", kilogram_to_pound, "pounds");
-};
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+const collection = ref(db, "WeAreTheChampions");
 
-inputField.addEventListener("keyup", render);
-document.getElementById("convert-btn").addEventListener("click", render);
+console.log(db);
 
-if (inputField.value !== null) {
-  render();
-}
+document.querySelector("button").addEventListener("click", () => {
+  const input = document.querySelector("input");
+  push(collection, input.value);
+  input.textContent = "";
+});
+
+onValue(collection, (snapshot) => {
+  const ul = document.querySelector("ul");
+  if (snapshot.exists()) {
+    const endorsements = Object.values(snapshot.val());
+    ul.innerHTML = endorsements.map((e) => `<li>${e}</li>`).join("");
+  } else {
+    ul.innerHTML = "No endorsements found";
+  }
+});
