@@ -1,40 +1,48 @@
-<!DOCTYPE html>
 <html>
   <head>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
     />
+    <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
       rel="stylesheet"
     />
-    <title>We are the Champions</title>
-    <link rel="stylesheet" href="index.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
-    <img src="assets/freddie.png" />
-    <h1>We are the Champions</h1>
-    <input placeholder="Write your endorsement here" />
-    <button>Publish</button>
-    <h2>- Endorsements -</h2>
-    <ul>
-      <li>Hi Bob!</li>
-      <li>
-        Abdellah! Abdellah!Abdellah! Abdellah!Abdellah!Abdellah! Abdellah!
-        Abdellah!Abdellah! Abdellah!Abdellah!Abdellah!
-        Abdellah!Abdellah!Abdellah!
-      </li>
-      <li>Leanne!</li>
-    </ul>
-
-    <script src="index.js" type="module"></script>
+    <header>
+      <img src="images/logo.png" class="logo" />
+      <img src="images/user-avatar.png" class="header-user-avatar" />
+    </header>
+    <main>
+      <div class="card-container">
+        <div class="card-header">
+          <img
+            class="card-user-avatar"
+            src="images/avatar-vangogh.jpg"
+            alt=""
+          />
+          <div class="card-header-desc">
+            <p class="author">Vincent van Gogh</p>
+            <p class="location">Zudert, Netherlands</p>
+          </div>
+        </div>
+        <img class="card-img" src="images/post-vangogh.jpg" alt="" />
+        <div class="card-socials">
+          <img class="icon" src="images/icon-heart.png" alt="" />
+          <img class="icon" src="images/icon-comment.png" alt="" />
+          <img class="icon" src="images/icon-dm.png" alt="" />
+        </div>
+        <p class="likes">21,492 likes</p>
+        <p class="post-content">
+          <span class="post-content-user">vincey1853</span> just took a few
+          mushrooms lol
+        </p>
+      </div>
+    </main>
+    <script src="index.js"></script>
   </body>
 </html>
