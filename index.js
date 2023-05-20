@@ -1,34 +1,30 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import {
-  ref,
-  push,
-  onValue,
-  getDatabase,
-} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
-
-const firebaseConfig = {
-  databaseURL:
-    "https://playground-6bec4-default-rtdb.asia-southeast1.firebasedatabase.app/",
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-const collection = ref(db, "WeAreTheChampions");
-
-console.log(db);
-
-document.querySelector("button").addEventListener("click", () => {
-  const input = document.querySelector("input");
-  push(collection, input.value);
-  input.textContent = "";
-});
-
-onValue(collection, (snapshot) => {
-  const ul = document.querySelector("ul");
-  if (snapshot.exists()) {
-    const endorsements = Object.values(snapshot.val());
-    ul.innerHTML = endorsements.map((e) => `<li>${e}</li>`).join("");
-  } else {
-    ul.innerHTML = "No endorsements found";
-  }
-});
+const posts = [
+  {
+    name: "Vincent van Gogh",
+    username: "vincey1853",
+    location: "Zundert, Netherlands",
+    avatar: "images/avatar-vangogh.jpg",
+    post: "images/post-vangogh.jpg",
+    comment: "just took a few mushrooms lol",
+    likes: 21,
+  },
+  {
+    name: "Gustave Courbet",
+    username: "gus1819",
+    location: "Ornans, France",
+    avatar: "images/avatar-courbet.jpg",
+    post: "images/post-courbet.jpg",
+    comment: "i'm feelin a bit stressed tbh",
+    likes: 4,
+  },
+  {
+    name: "Joseph Ducreux",
+    username: "jd1735",
+    location: "Paris, France",
+    avatar: "images/avatar-ducreux.jpg",
+    post: "images/post-ducreux.jpg",
+    comment:
+      "gm friends! which coin are YOU stacking up today?? post below and WAGMI!",
+    likes: 152,
+  },
+];
