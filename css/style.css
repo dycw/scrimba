@@ -1,0 +1,204 @@
+/* CSS Mini Reset */
+
+html,
+body,
+div,
+form,
+fieldset,
+legend,
+caption,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre {
+  vertical-align: baseline;
+
+  margin: 0;
+  outline: 0;
+
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font-weight: normal;
+  font-size: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  vertical-align: top;
+  text-align: left;
+}
+
+img {
+  border: 0;
+}
+
+/*****************************************************************************/
+
+/* nav bar */
+
+body > nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.75rem;
+  font-family: "Roboto", sans-serif;
+}
+
+body > nav > div.left {
+  display: flex;
+  align-items: center;
+  padding: 1.063rem 1.25rem;
+}
+
+body > nav > div.left > img {
+  width: 1.448rem;
+  height: 1.448rem;
+}
+
+body > nav > div.left > p {
+  padding-left: 0.188rem;
+  color: #0e0e0e;
+  font-weight: 700;
+  font-size: 0.847rem;
+}
+
+body > nav > div.right {
+  padding: 1.375rem 1.5rem;
+}
+
+body > nav > div.right > ul {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+body > nav > div.right > ul > li {
+  font-weight: 600;
+  font-size: 0.75rem;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+/* hero */
+
+body > section.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: url("../images/article-image.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1.563rem 1.25rem;
+  height: 18.313rem;
+  color: #ffffff;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body > section.hero > date {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+body > section.hero > h1 {
+  padding-top: 0.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 108.2%;
+}
+
+body > section.hero > p {
+  padding-top: 0.5rem;
+  line-height: 108.2%;
+}
+
+/* blogs */
+
+body > section.blogs {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 2.563rem;
+  padding: 2.125rem 1.25rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body > section.blogs > div.blog {
+  display: flex;
+  flex-direction: column;
+}
+
+body > section.blogs > div.blog > img {
+  display: block;
+  width: 100%;
+  max-height: 14.5rem;
+}
+
+body > section.blogs > div.blog > date {
+  padding-top: 0.875rem;
+  font-size: 0.886rem;
+  text-transform: uppercase;
+}
+
+body > section.blogs > div.blog > h1 {
+  padding-top: 0.563rem;
+  color: #141414;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.082;
+}
+
+body > section.blogs > div.blog > p {
+  padding-top: 0.563rem;
+  color: #505050;
+  line-height: 125%;
+}
+
+body > section.blogs > div.view-more {
+  align-self: center;
+}
+
+body > section.blogs > div.view-more > a {
+  padding-bottom: 2.688rem;
+  color: #000000;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+/* footer */
+
+body > footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.188rem;
+  background: #202020;
+  height: 6.563rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body > footer > h1 {
+  color: #ececec;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 108.2%;
+}
+
+body > footer > p {
+  color: #d7d7d7;
+  font-size: 0.75rem;
+  line-height: 125%;
+}
