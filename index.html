@@ -1,108 +1,87 @@
 <html>
   <head>
-    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
+    <title>My Learning Journal</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="header">
-      <h1>Jimmy's Diner</h1>
-      <p>The best burgers and pizzas in town</p>
-    </header>
-    <main>
-      <!-- section menu -->
-      <section class="menu">
-        <div class="menu-item" id="pizza">
-          <p class="menu-item-emoji">🍕</p>
-          <div class="menu-item-text-container">
-            <p class="menu-item-name">Pizza</p>
-            <p class="menu-item-ingredients">pepperoni,mushroom,mozarella</p>
-            <p class="menu-item-price">$14</p>
-          </div>
-          <button class="menu-item-add-button">+</button>
-        </div>
-        <div class="menu-item" id="hamburger">
-          <p class="menu-item-emoji">🍕</p>
-          <div class="menu-item-text-container">
-            <p class="menu-item-name">Pizza</p>
-            <p class="menu-item-ingredients">pepperoni,mushroom,mozarella</p>
-            <p class="menu-item-price">$14</p>
-          </div>
-          <button class="menu-item-add-button">+</button>
-        </div>
-        <div class="menu-item" id="beer">
-          <p class="menu-item-emoji">🍕</p>
-          <div class="menu-item-text-container">
-            <p class="menu-item-name">Pizza</p>
-            <p class="menu-item-ingredients">pepperoni,mushroom,mozarella</p>
-            <p class="menu-item-price">$14</p>
-          </div>
-          <button class="menu-item-add-button">+</button>
-        </div>
-      </section>
-
-      <!-- section order -->
-      <section class="order">
-        <h1 class="order-title">Your order</h1>
-        <div class="order-container">
-          <ul class="order-list">
-            <li class="order-item">
-              <div class="order-item-row">
-                <div>Pizza <button class="order-remove">remove</button></div>
-                <div class="price">$14</div>
-              </div>
-            </li>
-            <li class="order-item">
-              <div class="order-item-row">
-                <div>Beer <button class="order-remove">remove</button></div>
-                <div class="price">$12</div>
-              </div>
-            </li>
-          </ul>
-          <div class="order-item-row border-top">
-            <div class="order-item">Total price:</div>
-            <div class="price">$26</div>
-          </div>
-          <button class="complete-order">Complete order</button>
-        </div>
-      </section>
-    </main>
-
-    <!-- Enter card details -->
-    <div class="card-details">
-      <div class="card-details-container">
-        <h1 class="card-details-header">Enter card details</h1>
-        <form class="card-details-form">
-          <input
-            class="card-details-field"
-            type="text"
-            placeholder="Enter your name"
-          />
-          <input
-            class="card-details-field"
-            type="text"
-            placeholder="Enter card number"
-          />
-          <input
-            class="card-details-field"
-            type="text"
-            placeholder="Enter card CVV"
-          />
-          <button class="pay">Pay</button>
-        </form>
+    <!-- nav bar -->
+    <nav>
+      <div class="left">
+        <img src="images/logo.png" alt="" />
+        <p>My learning journal</p>
       </div>
-    </div>
-
-    <!-- Thanks screen -->
-    <div class="thanks-container">
-      <div class="thanks-screen">Thanks, James! Your order is on its way!</div>
-    </div>
-
-    <script src="index.js" type="module"></script>
+      <div class="right">
+        <ul>
+          <li>Home</li>
+          <li>About me</li>
+        </ul>
+      </div>
+    </nav>
+    <!-- hero -->
+    <section class="hero">
+      <date>July 23, 2022</date>
+      <h1>My new journey as a bootcamp student.</h1>
+      <p>
+        After several months of learning in the Frontend Developer Career Path,
+        I've made the big jump over to the Bootcamp to get expert code reviews
+        of my Solo Projects projects and meet like-minded peers.
+      </p>
+    </section>
+    <!-- blogs -->
+    <section class="blogs">
+      <div class="blog">
+        <img src="../images/blog-image-01.png" />
+        <date>July 23, 2022</date>
+        <h1>Blog one</h1>
+        <p>
+          I'm excited to start a new learning journey as a Scrimba Bootcamp
+          student! After several months of learning in the Frontend Developer
+          Career Path.
+        </p>
+      </div>
+      <div class="blog">
+        <img src="../images/blog-image-02.png" />
+        <date>July 23, 2022</date>
+        <h1>Blog one</h1>
+        <p>
+          I'm excited to start a new learning journey as a Scrimba Bootcamp
+          student! After several months of learning in the Frontend Developer
+          Career Path.
+        </p>
+      </div>
+      <div class="blog">
+        <img src="../images/blog-image-03.png" />
+        <date>July 23, 2022</date>
+        <h1>Blog one</h1>
+        <p>
+          I'm excited to start a new learning journey as a Scrimba Bootcamp
+          student! After several months of learning in the Frontend Developer
+          Career Path.
+        </p>
+      </div>
+      <div class="view-more">
+        <a href="#">View More</a>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer>
+      <h1>My Learning Journal</h1>
+      <p>Copyright ©2022</p>
+    </footer>
   </body>
+  <script src="index.js"></script>
 </html>
