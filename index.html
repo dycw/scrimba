@@ -4,84 +4,41 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
     />
-    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- title -->
-    <title>My Learning Journal</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="index.css" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
   </head>
   <body>
     <!-- nav bar -->
     <nav>
-      <div class="left">
-        <img src="images/logo.png" alt="" />
-        <p>My learning journal</p>
-      </div>
-      <div class="right">
-        <ul>
-          <li>Home</li>
-          <li>About me</li>
-        </ul>
-      </div>
+      <img id="nav-1" src="images/icon-profile.png" alt="" />
+      <img id="nav-2" src="images/logo.png" alt="" />
+      <img id="nav-3" src="images/icon-chat.png" alt="" />
     </nav>
-    <!-- hero -->
-    <section class="hero">
-      <date>July 23, 2022</date>
-      <h1>My new journey as a bootcamp student.</h1>
-      <p>
-        After several months of learning in the Frontend Developer Career Path,
-        I've made the big jump over to the Bootcamp to get expert code reviews
-        of my Solo Projects projects and meet like-minded peers.
-      </p>
-    </section>
-    <!-- blogs -->
-    <section class="blogs">
-      <div class="blog">
-        <img src="../images/blog-image-01.png" />
-        <date>July 23, 2022</date>
-        <h1>Blog one</h1>
-        <p>
-          I'm excited to start a new learning journey as a Scrimba Bootcamp
-          student! After several months of learning in the Frontend Developer
-          Career Path.
-        </p>
+    <main>
+      <div class="card">
+        <img class="dog-photo" src="images/dog-teddy.jpg" alt="" />
+        <img class="badge" id="badge-like" src="images/badge-like.png" alt="" />
+        <img class="badge" id="badge-nope" src="images/badge-nope.png" alt="" />
+        <div class="card-text">
+          <p>Teddy, 30</p>
+          <p>How you doing?</p>
+        </div>
       </div>
-      <div class="blog">
-        <img src="../images/blog-image-02.png" />
-        <date>July 23, 2022</date>
-        <h1>Blog one</h1>
-        <p>
-          I'm excited to start a new learning journey as a Scrimba Bootcamp
-          student! After several months of learning in the Frontend Developer
-          Career Path.
-        </p>
+      <div class="buttons">
+        <div class="button-container button-cross">
+          <img src="images/icon-cross.png" alt="" />
+        </div>
+        <div class="button-container button-heart">
+          <img src="images/icon-heart.png" alt="" />
+        </div>
       </div>
-      <div class="blog">
-        <img src="../images/blog-image-03.png" />
-        <date>July 23, 2022</date>
-        <h1>Blog one</h1>
-        <p>
-          I'm excited to start a new learning journey as a Scrimba Bootcamp
-          student! After several months of learning in the Frontend Developer
-          Career Path.
-        </p>
-      </div>
-      <div class="view-more">
-        <a href="#">View More</a>
-      </div>
-    </section>
-    <!-- footer -->
-    <footer>
-      <h1>My Learning Journal</h1>
-      <p>Copyright ©2022</p>
-    </footer>
+    </main>
   </body>
-  <script src="index.js"></script>
+  <script src="/index.js" type="module"></script>
 </html>
