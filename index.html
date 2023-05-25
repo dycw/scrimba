@@ -1,44 +1,50 @@
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <!-- nav bar -->
-    <nav>
-      <img id="nav-1" src="images/icon-profile.png" alt="" />
-      <img id="nav-2" src="images/logo.png" alt="" />
-      <img id="nav-3" src="images/icon-chat.png" alt="" />
-    </nav>
+    <form action="">
+      <input type="color" />
+      <select name="colors">
+        <option value="Monochrome">Monochrome</option>
+        <option value="Monochrome-dark">Monochrome-dark</option>
+        <option value="Monochrome-light">Monochrome-light</option>
+        <option value="Analogic">Analogic</option>
+        <option value="Complement">Complement</option>
+        <option value="Analogic-complement">Analogic-complement</option>
+        <option value="Triad">Triad</option>
+      </select>
+      <input type="submit" value="Get color scheme" />
+    </form>
     <main>
-      <div class="card">
-        <img class="dog-photo" src="images/dog-teddy.jpg" alt="" />
-        <img class="badge" id="badge-like" src="images/badge-like.png" alt="" />
-        <img class="badge" id="badge-nope" src="images/badge-nope.png" alt="" />
-        <div class="card-text">
-          <p>Teddy, 30</p>
-          <p>How you doing?</p>
-        </div>
+      <div class="color-container">
+        <div></div>
+        <div>#F55A5A</div>
       </div>
-      <div class="buttons">
-        <div class="button-container button-cross">
-          <img src="images/icon-cross.png" alt="" />
-        </div>
-        <div class="button-container button-heart">
-          <img src="images/icon-heart.png" alt="" />
-        </div>
+      <div class="color-container">
+        <div></div>
+        <div>#2B283A</div>
+      </div>
+      <div class="color-container">
+        <div></div>
+        <div>#FBF3AB</div>
+      </div>
+      <div class="color-container">
+        <div></div>
+        <div>#AAD1B6</div>
+      </div>
+      <div class="color-container">
+        <div></div>
+        <div>#A626D3</div>
       </div>
     </main>
+    <script src="index.js"></script>
   </body>
-  <script src="/index.js" type="module"></script>
 </html>
