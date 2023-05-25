@@ -1,50 +1,33 @@
-import { dogs } from "./data.js";
-
-const numDogs = dogs.length;
-
-const getRandomDog = () => {
-  const i = Math.floor(numDogs * Math.random());
-  return dogs[i];
-};
-
-let currentDog = getRandomDog();
-
-const getRandomDogUnequalToCurrent = () => {
-  let candidate;
-  do {
-    candidate = getRandomDog();
-  } while (candidate.name === currentDog.name);
-  return candidate;
-};
+document
+  .querySelector("input[type='submit']")
+  .addEventListener("click", (e) => {
+    e.preventDefault();
+    render();
+  });
 
 const render = () => {
-  document.querySelector("img.dog-photo").src = currentDog.avatar;
-  document.querySelector("div.card-text").innerHTML = `
-    <p>${currentDog.name}, ${currentDog.age}</p>
-    <p>${currentDog.bio}</p>
-  `;
-  document.getElementById("badge-like").style.display = currentDog.hasBeenLiked
-    ? "inline"
-    : "none";
-  document.getElementById("badge-nope").style.display = "none";
+  const color = document.querySelector("input[type='color']").value;
+  const mode = document.querySelector("select").value.toLowerCase();
+  const url =
+    "https://www.thecolorapi.com/scheme?" +
+    new URLSearchParams({ hex: color, mode });
+  fetch(url)
+    .then((r) => r.json())
+    .then((r) => {
+      console.log(r);
+      r.colors.map((data, idx) => setColor(idx, data.hex.value));
+    })
+    .catch((e) => console.log(e));
+};
+
+const setColor = (idx, hexCode) => {
+  console.log(idx, hexCode);
+  const i = idx + 1;
+  const container = document.querySelector(
+    `div.color-container:nth-of-type(${i})`
+  );
+  container.querySelector(`div:nth-of-type(1)`).style.backgroundColor = hexCode;
+  container.querySelector(`div:nth-of-type(2)`).textContent = hexCode;
 };
 
 render();
-
-const updateStatus = (hasBeenLiked) => {
-  currentDog.hasBeenLiked = hasBeenLiked;
-  currentDog.hasBeenSwiped = true;
-  render();
-  setTimeout(() => {
-    currentDog = getRandomDogUnequalToCurrent();
-    render();
-  }, 2000);
-};
-
-document.querySelector("div.button-cross").addEventListener("click", () => {
-  updateStatus(false);
-  document.getElementById("badge-nope").style.display = "inline";
-});
-document
-  .querySelector("div.button-heart")
-  .addEventListener("click", () => updateStatus(true));
